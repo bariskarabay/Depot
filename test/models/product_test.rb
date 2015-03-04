@@ -4,6 +4,15 @@ class ProductTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  test "product is not valid without a unique title" do
+    product=Product.new(title: products(:ruby).title,
+    	                 description: "yyy",
+    	                 price: 1,
+    	                 image_url: "fred.gif")
+    assert product.invalid?
+    assert_equal ["Bu baslik zaten kullaniliyor"], product.errors[:title]
+  end 
+
   test "Product ozellikleri bos bırakılamaz" do 
   	product=Product.new
   	assert product.invalid?
