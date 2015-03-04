@@ -20,3 +20,8 @@
              #Store adında yeni bir controller oluşturuldu.
              #index adında yeni bir view oluşturuldu
              #root to: kullanılarak ana sayfa store/index olarak değiştirildi     
+             #index action ı oluşturuldu
+             #order metotdu çağrılarak veriler anasayfada sıralandı
+             #css düzenlemesi yapıldı
+             #fonksiyonel test kullanılarak veri bütünlüğü test edildi (controller test)
+             
