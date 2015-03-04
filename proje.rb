@@ -24,4 +24,7 @@
              #order metotdu çağrılarak veriler anasayfada sıralandı
              #css düzenlemesi yapıldı
              #fonksiyonel test kullanılarak veri bütünlüğü test edildi (controller test)
-             
+       #Depot_9D
+             #cart ismin de yeni scaffold eklendi
+             #migrate edilerek veriler kalıcı hale getirildi
+                  
