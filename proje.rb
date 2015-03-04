@@ -8,7 +8,15 @@
              #seed komutu kullanıldı
              #/db/seeds.rb dosyasının içeriği değiştirildi burada ilk önce tüm ürün bilgileri silindi daha sonra ise yeni bir ürün eklendi
              #Ekran da Resim verisi gösterildi
-       #Depot_6b
+       #Depot_7b
              #Ürün eklemesi yapılırken Form kontrolleri (validation) kullanıldı
              #products_controller_test.rb dosyasında veri eklenerek proje test edildi.
              #product_test.rb dosyasında test validation işlemi yapıldı
+             #Gerekli alanlar sağlandı
+             #Price alanı sayısal veri tipi olarak değiştirildi ve sınır sayısı belirlendi
+             #Resim uzantılarının kontroller yapıldı
+             #Birim testi için product_test dosyasına yeni alanlar eklendi
+       #Depot_8c
+             #Store adında yeni bir controller oluşturuldu.
+             #index adında yeni bir view oluşturuldu
+             #root to: kullanılarak ana sayfa store/index olarak değiştirildi     
