@@ -1,6 +1,22 @@
 #Depot6
        #Depot_6a
              #Ürünler projesinin ana yapısı rails kullanılarak oluşturuldu
+             #Depot adında yeni bir rails projesi oluşturuldu
+             rails new Depot
+             rails generate scaffold Product title:string description:text image_url:string price:decimal
+             rake db:migrate 
+             #Varolan tüm kayıtları silerek, otomatik olarak bir kayıt eklendi (depot/db/seeds.rb)
+             Produt.delete_all
+             Produt.create(title: 'Ruby ile programlama', 
+             description:
+                %{<p>
+                Ruby is the fastest growing bla bla bla bla bla bla
+                  </p>},
+             image_url: 'resim.jpg',
+             price: 49.95)
+
+             #Verileri eklemek üzere hazır tuttuk
+             rake db:seed
              #Scaffold MVC yapısı oluşturuldu
              #Products tablosu oluşturuldu bu tablonun içerisinde title,description,image_url ve price alanları oluşturuldu
              #Migrate işlemi kullanılarak veritabanı kalıcı hale getirildi rake db:migrate
