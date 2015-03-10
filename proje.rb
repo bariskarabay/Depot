@@ -17,15 +17,19 @@
 
              #Verileri eklemek üzere hazır tuttuk
              rake db:seed
-             #Scaffold MVC yapısı oluşturuldu
-             #Products tablosu oluşturuldu bu tablonun içerisinde title,description,image_url ve price alanları oluşturuldu
-             #Migrate işlemi kullanılarak veritabanı kalıcı hale getirildi rake db:migrate
-             #Proje test edildi
-             #seed komutu kullanıldı
-             #/db/seeds.rb dosyasının içeriği değiştirildi burada ilk önce tüm ürün bilgileri silindi daha sonra ise yeni bir ürün eklendi
-             #Ekran da Resim verisi gösterildi
+
+             #Sayfa da resim gösterimi (/app/views/products/index.html/erb)
+             <td><%= image_tag(product.image_url, class: 'list_image') %></td>
+                                         
        #Depot_7b
              #Ürün eklemesi yapılırken Form kontrolleri (validation) kullanıldı
+             validates :title, :description, :image_url, presence: true
+             validates :price, numericality: {greater_than_or_equal_to: 0.01}
+             validates :title, uniqueness: true
+             validates :image_url, allow_blank: true, format: {
+             with: %r{\.(gif|jpg|png)\Z}i,
+             message: 'Resim yolunu dogru yazınız '
+      }
              #products_controller_test.rb dosyasında veri eklenerek proje test edildi.
              #product_test.rb dosyasında test validation işlemi yapıldı
              #Gerekli alanlar sağlandı
