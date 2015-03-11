@@ -28,8 +28,17 @@
              validates :title, uniqueness: true
              validates :image_url, allow_blank: true, format: {
              with: %r{\.(gif|jpg|png)\Z}i,
-             message: 'Resim yolunu dogru yazınız '
-      }
+             message: 'Resim yolunu dogru yazınız '}
+             # /test/controllers/products_controller_test.rb dosyasında bazı veriler eklenerek geçerlilik kontrolü yapılmıştır.
+       
+                @product = products(:one)
+                @update = {
+                title: 'Baris',
+                description: 'Karabay Software!',
+                image_url: 'baris.jpg',
+                price: 20.7}
+                
+               
              #products_controller_test.rb dosyasında veri eklenerek proje test edildi.
              #product_test.rb dosyasında test validation işlemi yapıldı
              #Gerekli alanlar sağlandı
@@ -38,10 +47,14 @@
              #Birim testi için product_test dosyasına yeni alanlar eklendi
        #Depot_8c
              #Store adında yeni bir controller oluşturuldu.
+              rails generate controller Store index
              #index adında yeni bir view oluşturuldu
-             #root to: kullanılarak ana sayfa store/index olarak değiştirildi     
-             #index action ı oluşturuldu
-             #order metotdu çağrılarak veriler anasayfada sıralandı
+             #Ana sayfa store/index olarak değiştirildi (config/routes.rb)   
+              root to: 'store#index', as: 'store' 
+             #index action ı oluşturuldu ve veriler anasayfada sıralandı
+              def index
+                  @produts = Produt.order(:title)
+              end
              #css düzenlemesi yapıldı
              #fonksiyonel test kullanılarak veri bütünlüğü test edildi (controller test)
        #Depot_9D
